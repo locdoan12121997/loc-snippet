@@ -108,3 +108,14 @@ venv.bak/
 *.graphml
 test.py
 static/
+*.mp4
+*.png
+*.pdf
+*.mkv
+*.jpg
+*.pyc
+checkpoints/
+*.json
+*.h5
+*.pb
+*.jpeg
