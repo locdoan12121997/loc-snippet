@@ -8,13 +8,16 @@ https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_a
 https://www.cyberciti.biz/faq/ubuntu-linux-install-nvidia-driver-latest-proprietary-driver/
 https://docs.nvidia.com/deploy/cuda-compatibility/index.html
 https://www.geforce.com/drivers
+or https://medium.com/better-programming/how-i-fixed-my-display-resolution-by-installing-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux-489563052f6c
 
 # restart computer
 
 # install cuda
 https://developer.nvidia.com/cuda-10.0-download-archive
+# follow instruction
 sudo dpkg -i cuda-repo-ubuntu1804-10-0-local-nvjpeg-update-1_1.0-1_amd64.deb
 sudo apt-get install cuda-toolkit-10-0
+
 
 wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
 
@@ -25,10 +28,13 @@ sudo apt install -y libcudnn7 libcudnn7-dev libnccl2 libc-ares-dev
 sudo apt autoremove
 sudo apt upgrade
 
+or
+https://developer.nvidia.com/cudnn
 
-sudo mkdir -p /usr/local/cuda-10.0/nccl/lib
+
+sudo mkdir -p /usr/local/cuda-10.1/nccl/lib
 sudo ln -s /usr/lib/x86_64-linux-gnu/libnccl.so.2 /usr/local/cuda/nccl/lib/
-sudo ln -s /usr/lib/x86_64-linux-gnu/libcudnn.so.7 /usr/local/cuda-10.0/lib64/
+sudo ln -s /usr/lib/x86_64-linux-gnu/libcudnn.so.7 /usr/local/cuda-10.1/lib64/
 
 # verify installation
 cat /proc/driver/nvidia/version
@@ -37,3 +43,4 @@ https://xcat-docs.readthedocs.io/en/stable/advanced/gpu/nvidia/verify_cuda_insta
 
 export PATH=/usr/local/cuda-10.0/bin/:/usr/local/cuda-10.0/NsightCompute-1.0/${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+sudo ln -s /usr/local/cuda-10.1 /usr/local/cuda && sudo ldconfig /usr/local/cuda/lib64

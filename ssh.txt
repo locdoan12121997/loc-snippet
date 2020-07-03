@@ -1,0 +1,22 @@
+# ssh to other computer
+ssh aioz-giang@192.168.1.45
+pass: giang@aioz
+ssh aioz-dbinh@192.168.1.253
+pass: 123
+
+# copy from other machine
+scp aioz-loc@192.168.1.124:"/home/aioz-loc/working/DenseCNN.zip" .
+
+# cd to workspace
+/home/aioz-dbinh/loc/DenseCNN
+/home/aioz-dbinh/loc/brast_keras
+/media/data/loc/brats_keras
+/home/aioz-giang/loc/DenseCNN
+/media/aioz-dbinh/data/loc
+/media/data/loc 
+
+# jupyter through ssh
+ssh -N -f -L localhost:8080:localhost:8889 aioz-giang@192.168.1.45
+jupyter  notebook --no-browser --port=8889
+
+
